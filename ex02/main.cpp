@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 17:32:11 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 18:54:00 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,34 @@ int	main(void)
 	ScavTrap lamine("Lamine");
 	FragTrap pedri("Pedri");
 
+	print_message_colored("TEST ATTACKS", "red");
+	gavi.attack("Sami");
+	lamine.attack("Ayoub");
+	pedri.attack("Sami");
+
+	print_message_colored("TEST TAKE DAMAGE", "yellow");
+	gavi.takeDamage(100);
+	lamine.takeDamage(20);
+	pedri.takeDamage(50);
+
+	print_message_colored("TEST ATTACKS", "red");
+	gavi.attack("Sami");
+	lamine.attack("Ayoub");
+	pedri.attack("Ayoub");
+	
+	print_message_colored("TEST BE REPAIRED", "");
+	gavi.beRepaired(10);
+	lamine.beRepaired(10);
+	pedri.beRepaired(10);
+
+	print_message_colored("TEST HIGH FIVES", "");
+	pedri.highFivesGuys();
+	print_message_colored("ANOTHER VARIABLES FRAGTRAP", "");
+	FragTrap first("First");
+	first.takeDamage(10000);
+	first.attack("Lamine");
+	FragTrap second;
+	FragTrap third(first);
 	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 	return (0);
 }
