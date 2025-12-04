@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 18:54:00 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 18:54:45 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,9 @@ int	main(void)
 	first.attack("Lamine");
 	FragTrap second;
 	FragTrap third(first);
+	FragTrap last;
+
+	last = first;
 	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 	return (0);
 }
