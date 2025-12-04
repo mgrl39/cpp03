@@ -6,11 +6,12 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 13:38:14 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:04:00 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 #include <string>
 
 /*
@@ -35,15 +36,7 @@ void	print_message_colored(std::string msg, std::string color)
 	std::cout << color << msg << reset << std::endl;
 }
 
-/*
- * First creates 3 ClapTrap instances. One of them with Default constructor and the
- * others with the parameterized one.
- *
- * 1. testing the attack, its the same in the three
- * 2. In the second test, i "killed" Default, Kilian nd Guillem still have hit points.
- *
- */
-int	main(void)
+void	first_exercise_main(void)
 {
 	print_message_colored("DECLARATION AND INITIALIZATION OF VARIABLES", "purple");
 	ClapTrap jaume;
@@ -94,5 +87,18 @@ int	main(void)
 	guillem.beRepaired(10);
 
 	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
+}
+/*
+ * First creates 3 ClapTrap instances. One of them with Default constructor and the
+ * others with the parameterized one.
+ *
+ * 1. testing the attack, its the same in the three
+ * 2. In the second test, i "killed" Default, Kilian nd Guillem still have hit points.
+ *
+ */
+int	main(void)
+{
+	first_exercise_main();
+	ScavTrap a;
 	return (0);
 }
