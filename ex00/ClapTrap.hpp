@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:19:13 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 11:27:12 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 12:43:04 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_HPP
 
 # include <iostream>
+# include <string>
 
 class ClapTrap
 {

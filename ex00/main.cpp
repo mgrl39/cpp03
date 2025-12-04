@@ -6,13 +6,93 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/03 18:53:41 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:38:14 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include <string>
 
+/*
+ * Default color: green
+ * but can be red, cyaan,, purple and yellow
+ */
+void	print_message_colored(std::string msg, std::string color)
+{
+	std::string	reset;
+
+	if (color == "red")
+		color = "\033[31m";
+	else if (color == "cyan")
+		color = "\033[36m";
+	else if (color == "purple")
+		color = "\033[35m";
+	else if (color == "yellow")
+		color = "\033[33m";
+	else
+		color = "\033[32m";
+	reset = "\033[0m";
+	std::cout << color << msg << reset << std::endl;
+}
+
+/*
+ * First creates 3 ClapTrap instances. One of them with Default constructor and the
+ * others with the parameterized one.
+ *
+ * 1. testing the attack, its the same in the three
+ * 2. In the second test, i "killed" Default, Kilian nd Guillem still have hit points.
+ *
+ */
 int	main(void)
 {
+	print_message_colored("DECLARATION AND INITIALIZATION OF VARIABLES", "purple");
+	ClapTrap jaume;
+	ClapTrap kilian("Kilian");
+	ClapTrap guillem("Guillem");
+
+	print_message_colored("TEST ATTACKS", "red");
+	jaume.attack("Kilian");
+	kilian.attack("Guillem");
+	guillem.attack("Another ClapTrap");
+
+	print_message_colored("TEST TAKE DAMAGE", "yellow");
+	jaume.takeDamage(11);
+	kilian.takeDamage(7);
+	guillem.takeDamage(1);
+
+	print_message_colored("TEST ATTACKS", "red");
+	jaume.attack("Kilian");
+	kilian.attack("Guillem");
+	guillem.attack("Another ClapTrap");
+
+	print_message_colored("TEST BE REPAIRED", "");
+	jaume.beRepaired(10);
+	kilian.beRepaired(10);
+	guillem.beRepaired(10);
+
+	print_message_colored("TEST BE REPAIRED AND ATTACK WITH 0 ENERGY", "cyan");
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.beRepaired(10);
+	kilian.attack("Guillem");
+	print_message_colored("TEST BE REPAIRED AND ATTACK WITH 0 ENERGY AND 0 HIT POINTS", "red");
+	guillem.beRepaired(10);
+	guillem.beRepaired(10);
+	guillem.beRepaired(10);
+	guillem.beRepaired(10);
+	guillem.beRepaired(10);
+	guillem.beRepaired(10);
+	guillem.beRepaired(10);
+	guillem.takeDamage(100);
+	guillem.attack("Kilian");
+	guillem.beRepaired(10);
+
+	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 	return (0);
 }

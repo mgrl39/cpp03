@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:19:20 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 11:53:13 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 13:38:46 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(): name("Default"), hit_points(10), energy_points(10), attack
 // CAPAZ CUNDE PASARLE EL NOMBREPOR REFERENCENCIA EH
 ClapTrap::ClapTrap(const std::string name): name(name), hit_points(10), energy_points(10), attack_damage(0)
 {
-	std::cout << "ClapTrap with name parameter constructor called" << std::endl;
+	std::cout << "ClapTrap with name '" << this->name << "' as parameter constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -78,40 +78,21 @@ void	ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	this->energy_points--;
-	msg = "ClapTrap " + this->name + " attacks " + target + ", causing";
-	std::cout << msg << (int)this->attack_damage << " points of damage!" << std::endl;
+	msg = "ClapTrap " + this->name + " attacks " + target + " using 1 enery point, causing ";
+	std::cout << msg << this->attack_damage << " points of damage!" << std::endl;
 }
 
+/*
+ * takeDamage is not an action that ClapTrap does, it's a thing that can happen to him.
+ * That's why "Attacking and Repairing each cost 1", but not takeDamage.
+ */
 void	ClapTrap::takeDamage(unsigned int amount)
 { 
-	std::string	msg;
-	bool	cannot_take_damage;
-
-	cannot_take_damage = false;
-	msg = "";
-	if (this->hit_points == 0)
-	{
-		msg = "ClapTrap " + this->name + " can't TAKE DAMAGE if it has no hit points (health)";
-		cannot_take_damage = true;
-	}
-	if (this->energy_points == 0)
-	{
-		if (msg != "")
-			msg += " and can't TAKE DAMAGE if it has no energy points left";
-		else
-			msg = "ClapTrap " + this->name + " can’t TAKE DAMAGE if it has no energy points left";
-		cannot_take_damage = true;
-	}
-	if (cannot_take_damage)
-	{
-		std::cout << msg << std::endl;
-		return ;
-	}
-	if (this->hit_points - amount < 0)
+	if (((int)this->hit_points - (int)amount) < 0)
 		this->hit_points = 0;
 	else
 		this->hit_points -= amount;
-	std::cout << "ClapTrap " << this->name + "takes " << amount << " damage";
+	std::cout << "ClapTrap " << this->name + " takes " << amount << " damage (actual hit points: " << this->hit_points << ", actual energy points: " << this->energy_points << ")" << std::endl;
 }
 
 void 	ClapTrap::beRepaired(unsigned int amount)
@@ -141,5 +122,5 @@ void 	ClapTrap::beRepaired(unsigned int amount)
 	}
 	this->energy_points--;
 	this->hit_points += amount;
-	std::cout << "ClapTrap " << this->name + "regains " << amount << " hit points";
+	std::cout << "ClapTrap " << this->name + " regains " << amount << " hit points (actual hit points: " << this->hit_points << ", actual energy points: " << this->energy_points << ")" << std::endl;
 }
