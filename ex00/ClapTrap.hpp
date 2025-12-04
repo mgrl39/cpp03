@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:19:13 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/03 19:12:42 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:48:30 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap
 
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(const std::string name);
 		~ClapTrap();
 		ClapTrap& operator=(const ClapTrap& rhs);
 		ClapTrap(const ClapTrap &rhs);

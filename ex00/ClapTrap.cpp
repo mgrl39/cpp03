@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:19:20 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/03 19:34:39 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/03 20:48:32 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ ClapTrap::ClapTrap(): name("Default"), hit_points(10), energy_points(10), attack
 	std::cout << "Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): name(name), hit_points(10), energy_points(10), attack_damage(0)
+// CAPAZ CUNDE PASARLE EL NOMBREPOR REFERENCENCIA EH
+ClapTrap::ClapTrap(const std::string name): name(name), hit_points(10), energy_points(10), attack_damage(0)
 {
 	std::cout << "ClapTrap with name parameter constructor called" << std::endl;
 }
@@ -54,19 +55,34 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
 void	ClapTrap::attack(const std::string& target)
 {
 	std::string	msg;
+	bool	failed;
 
-	if (this->hit_points != 0 && this->energy_points != 0)
+	failed = false;
+	if (this->hit_points == 0)
 	{
-		msg = "ClapTrap " + this->name + " attacks " + target + ", causing";
-		std::cout << msg << (int)this->attack_damage << std::endl << " points of damage!";
-		this->energy_points--;
+		std::cout << "ClapTrap can’t do anything if it has no hit points" << std::endl;
+		failed = true;
 	}
-	else 
-		std::cout << CANNOT_ATTACK << std::endl;
+	if (this->energy_points == 0)
+	{
+		std::cout << "ClapTrap can’t do anything if it has no energy points left" << std::endl;
+		failed = true;
+	}
+	if (failed)
+		return ;
+	this->energy_points--;
+	msg = "ClapTrap " + this->name + " attacks " + target + ", causing";
+	std::cout << msg << (int)this->attack_damage << std::endl << " points of damage!";
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	(void)amount;
 }
 
+
+void 	ClapTrap::beRepaired(unsigned int amount)
+{
+	if (this->hit_points != 0 && this->energy_points != 0)
+	{
+	}
+}
