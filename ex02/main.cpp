@@ -6,12 +6,13 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 17:02:25 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:32:11 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 #include <string>
 
 /*
@@ -145,5 +146,11 @@ int	main(void)
 	print_message_colored("=================================================", "red");
 	second_exercise_main();
 	print_message_colored("=================================================", "red");
+	print_message_colored("DECLARATION AND INITIALIZATION OF VARIABLES", "purple");
+	ClapTrap gavi("Gavi");
+	ScavTrap lamine("Lamine");
+	FragTrap pedri("Pedri");
+
+	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 	return (0);
 }
