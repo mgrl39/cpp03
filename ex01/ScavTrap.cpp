@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:22:07 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 16:03:19 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:37:24 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,34 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 void	ScavTrap::guardGate()
 {
 	std::cout << "Guard " << this->name << " is now in Gate keeper mode" << std::endl;
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	std::string	msg;
+	bool	cannot_attack;
+
+	cannot_attack = false;
+	msg = "";
+	if (this->hit_points == 0)
+	{
+		msg = "ScavTrap " + this->name + " can't ATTACK if it has no hit points (health)";
+		cannot_attack = true;
+	}
+	if (this->energy_points == 0)
+	{
+		if (msg != "")
+			msg += " and can't ATTACK if it has no energy points left";
+		else
+			msg = "ScavTrap " + this->name + " can’t ATTACK if it has no energy points left";
+		cannot_attack = true;
+	}
+	if (cannot_attack)
+	{
+		std::cout << msg << std::endl;
+		return ;
+	}
+	this->energy_points--;
+	msg = "ScavTrap " + this->name + " attacks " + target + " using 1 enery point, causing ";
+	std::cout << msg << this->attack_damage << " points of damage!" << std::endl;
 }

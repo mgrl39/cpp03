@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 16:06:49 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:49:46 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,51 @@ void	first_exercise_main(void)
 
 int	main(void)
 {
-	first_exercise_main();
+	print_message_colored("DECLARATION AND INITIALIZATION OF VARIABLES", "purple");
+	ClapTrap kilian;
 	ScavTrap jaume;
 	ScavTrap ayoub("Ayoub");
 	ScavTrap sami("Sami");
-	ScavTrap bimba(ayoub);
 	jaume = sami;
+
+	print_message_colored("TEST ATTACKS", "red");
+	ayoub.attack("Sami");
+	sami.attack("Ayoub");
+	kilian.attack("Sami");
+
+	print_message_colored("TEST TAKE DAMAGE", "yellow");
+	ayoub.takeDamage(100);
+	sami.takeDamage(20);
+	jaume.takeDamage(50);
+
+	print_message_colored("TEST ATTACKS", "red");
+	ayoub.attack("Sami");
+	sami.attack("Ayoub");
+	jaume.attack("Ayoub");
+	
+	print_message_colored("TEST BE REPAIRED", "");
+	jaume.beRepaired(10);
+	sami.beRepaired(10);
+	kilian.beRepaired(10);
+
+	print_message_colored("TEST BE REPAIRED AND ATTACK WITH 0 ENERGY", "cyan");
+	for (int i = 0; i < 50 ; i++)
+		sami.beRepaired(1);
+	sami.attack("Ayoub");
+	print_message_colored("TEST ATTACK WITH 0 HIT POINTS", "cyan");
+	ayoub.takeDamage(200);
+	ayoub.attack("Sami");
+	print_message_colored("TEST BE REPAIRED AND ATTACK WITH 0 ENERGY AND 0 HIT POINTS", "red");
+	sami.takeDamage(200);
+	sami.attack("Ayoub");
+	sami.beRepaired(1);
+	sami.attack("Ayoub");
+
+	print_message_colored("TEST GATE KEEPER MODE", "cyan");
+	sami.guardGate();
+	ayoub.guardGate();
+	//kilian.guardGate(); // no member named 'guardGate' in 'ClapTrap'
+
+	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 	return (0);
 }
