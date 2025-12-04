@@ -6,16 +6,14 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:19:13 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/03 20:48:30 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 11:27:12 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
-# define CANNOT_ATTACK \
-	"ClapTrap can't do anything if it has no hit points or energy points left"
 
-#include <iostream>
+# include <iostream>
 
 class ClapTrap
 {
