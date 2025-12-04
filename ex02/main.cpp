@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 16:59:32 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:02:25 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,5 +141,9 @@ void	second_exercise_main(void)
 
 int	main(void)
 {
+	first_exercise_main();
+	print_message_colored("=================================================", "red");
+	second_exercise_main();
+	print_message_colored("=================================================", "red");
 	return (0);
 }
