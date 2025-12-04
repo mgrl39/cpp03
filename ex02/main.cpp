@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 16:49:46 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:59:32 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	first_exercise_main(void)
 	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 }
 
-int	main(void)
+void	second_exercise_main(void)
 {
 	print_message_colored("DECLARATION AND INITIALIZATION OF VARIABLES", "purple");
 	ClapTrap kilian;
@@ -137,5 +137,9 @@ int	main(void)
 	//kilian.guardGate(); // no member named 'guardGate' in 'ClapTrap'
 
 	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
+}
+
+int	main(void)
+{
 	return (0);
 }
