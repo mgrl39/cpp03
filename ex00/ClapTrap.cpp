@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:19:20 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 14:48:22 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:41:15 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ ClapTrap::ClapTrap(): name("Default"), hit_points(10), energy_points(10), attack
 	std::cout << "ClapTrap Default constructor called" << std::endl;
 }
 
-// CAPAZ CUNDE PASARLE EL NOMBREPOR REFERENCENCIA EH
 ClapTrap::ClapTrap(const std::string name): name(name), hit_points(10), energy_points(10), attack_damage(0)
 {
 	std::cout << "ClapTrap with name '" << this->name << "' as parameter constructor called" << std::endl;

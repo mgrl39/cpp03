@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:22:07 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 15:07:48 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:43:01 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ ScavTrap::ScavTrap(): ClapTrap()
 	std::cout << "ScavTrap Default constructor called" << std::endl;
 }
 
-/*
-ScavTrap::~ScavTrap():
+
+ScavTrap::~ScavTrap()
 {
-	std::cout << "ClapTrap Destructor for " << this->name << " called" << std::endl;
-}*/
+	std::cout << "ScavTrap Destructor for " << this->name << " called" << std::endl;
+}
 
 void	ScavTrap::guardGate()
 {

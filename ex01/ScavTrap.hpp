@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:22:02 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 15:07:51 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 15:43:03 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ class ScavTrap : public ClapTrap
 	public:
 		ScavTrap();
 		//ScavTrap(const std::string name);
-		//~ScavTrap();
+		~ScavTrap();
 		/*
 		ScavTrap& operator=(const ScavTrap& rhs);
 		ScavTrap(const std::string &rhs);
