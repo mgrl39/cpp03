@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 15:04:00 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:03:47 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,11 @@ void	first_exercise_main(void)
  */
 int	main(void)
 {
-	first_exercise_main();
-	ScavTrap a;
+	//first_exercise_main();
+	ScavTrap jaume;
+	ScavTrap ayoub("Ayoub");
+	ScavTrap sami("Sami");
+	ScavTrap bimba(ayoub);
+	jaume = sami;
 	return (0);
 }
