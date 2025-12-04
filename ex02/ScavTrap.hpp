@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:22:02 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 17:19:20 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:21:58 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
+
 class ScavTrap : public ClapTrap
 {
 	public:
