@@ -6,11 +6,14 @@
 /*   By: meghribe <meghribe@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 16:58:21 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 17:17:29 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:20:43 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
+# include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap
 {
@@ -22,3 +25,5 @@ class FragTrap : public ClapTrap
 		FragTrap(const FragTrap& rhs);
 		void highFivesGuys(void);
 };
+
+#endif
