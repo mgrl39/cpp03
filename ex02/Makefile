@@ -6,7 +6,7 @@
 #    By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/03 16:19:03 by meghribe          #+#    #+#              #
-#    Updated: 2025/12/04 16:58:51 by meghribe         ###   ########.fr        #
+#    Updated: 2025/12/04 18:56:27 by meghribe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME := fragtrap
 SRCS := ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 OBJS := $(SRCS:%=%.o)
 INCS := ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
-DEBUG := -g3 -fsanitize=address
+#DEBUG := -g3 -fsanitize=address
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 $(DEBUG)
 
 .PHONY: all
