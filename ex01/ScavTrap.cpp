@@ -6,12 +6,14 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 14:22:07 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 14:23:40 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 14:33:58 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include <iostream>
 
-class ScavTrap : public ClapTrap
+void	ScavTrap::guardGate()
 {
-};
+	std::cout << "Guard " << this->name << " is now in Gate keeper mode" << std::endl;
+}
