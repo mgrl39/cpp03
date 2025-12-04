@@ -6,7 +6,7 @@
 #    By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/03 16:19:03 by meghribe          #+#    #+#              #
-#    Updated: 2025/12/04 12:00:04 by meghribe         ###   ########.fr        #
+#    Updated: 2025/12/04 13:52:24 by meghribe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME := claptrap
 SRCS := ClapTrap.cpp main.cpp
 OBJS := $(SRCS:%=%.o)
 INCS := ClapTrap.hpp
-DEBUG := -pedantic -g3 -fsanitize=address
+DEBUG := -g3 -fsanitize=address
 CXXFLAGS := -Wall -Wextra -Werror -std=c++98 $(DEBUG)
 
 .PHONY: all
