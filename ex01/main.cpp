@@ -6,7 +6,7 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:55:08 by meghribe          #+#    #+#             */
-/*   Updated: 2025/12/04 16:03:47 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/12/04 16:06:49 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,10 @@ void	first_exercise_main(void)
 
 	print_message_colored("DESTRUCTION OF VARIABLES", "purple");
 }
-/*
- * First creates 3 ClapTrap instances. One of them with Default constructor and the
- * others with the parameterized one.
- *
- * 1. testing the attack, its the same in the three
- * 2. In the second test, i "killed" Default, Kilian nd Guillem still have hit points.
- *
- */
+
 int	main(void)
 {
-	//first_exercise_main();
+	first_exercise_main();
 	ScavTrap jaume;
 	ScavTrap ayoub("Ayoub");
 	ScavTrap sami("Sami");
